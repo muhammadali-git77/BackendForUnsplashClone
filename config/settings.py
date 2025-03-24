@@ -29,18 +29,19 @@ DEBUG = True
 ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
-    "ea75-188-113-231-41.ngrok-free.app"
+    "ea75-188-113-231-41.ngrok-free.app",
+    "backendforunsplashclone-production.up.railway.app"
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:5173",
     "http://127.0.0.1:8000",
-    "https://ea75-188-113-231-41.ngrok-free.app"
+    "https://backendforunsplashclone-production.up.railway.app"
 ]
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://127.0.0.1:8000",
-    "https://ea75-188-113-231-41.ngrok-free.app"
+    "https://backendforunsplashclone-production.up.railway.app"
 ]
 CORS_ALLOW_CREDENTIALS = True  # Cookie va sessionlarni ishlatish uchun
 
