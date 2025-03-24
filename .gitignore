@@ -1,0 +1,30 @@
+# Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.sqlite3
+*.log
+
+# Django
+db.sqlite3
+media/
+staticfiles/
+.env
+
+# Virtual environment
+venv/
+.env/
+*.env
+
+# IDE/Editor
+.vscode/
+.idea/
+*.iml
+
+# Migrations (optional, if you want to ignore compiled migrations)
+**/migrations/*.pyc
+**/migrations/__pycache__/
+
+# Docker
+*.pid
