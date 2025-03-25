@@ -20,19 +20,13 @@ class PostViewSet(viewsets.ModelViewSet):
         serializer.save(author=self.request.user)
 
 
-def download_image(request, photo_id):
-    """Fayl yuklab olish uchun endpoint"""
-    photo = get_object_or_404(Photo, id=photo_id)
-    
-    if not photo.image:
-        return HttpResponse("Fayl topilmadi", status=404)
+from django.shortcuts import get_object_or_404
+from django.http import FileResponse
 
-    file_path = photo.image.path  # Faylning real yo'li
-    with open(file_path, 'rb') as f:
-        response = HttpResponse(f.read(), content_type="image/jpeg")  
-        response['Content-Disposition'] = f'attachment; filename="{photo.image.name}"'
-        return response
- 
+def download_image(request, photo_id):
+    photo = get_object_or_404(Photo, id=photo_id)
+    return FileResponse(photo.image.open(), as_attachment=True)
+
     
 class UserUpdateView(generics.RetrieveUpdateAPIView):
     queryset = User.objects.all()

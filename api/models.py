@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.conf import settings
+from django.shortcuts import reverse
 
 class Photo(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -10,10 +11,9 @@ class Photo(models.Model):
     def __str__(self):
         return self.subtitle
 
-    def download_url(self):
-        """Rasmni yuklab olish uchun to‘liq URL qaytaradi."""
+    def get_download_url(self):
         if self.image:
-            return f"{settings.MEDIA_URL}{self.image}"
+            return settings.MEDIA_URL + str(self.image)
         return None
     
 
