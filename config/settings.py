@@ -42,6 +42,7 @@ CSRF_TRUSTED_ORIGINS = [
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://127.0.0.1:8000",
+    "https://unsplash-rust.vercel.app",
     "https://backendforunsplashclone-production.up.railway.app"
 ]
 CORS_ALLOW_CREDENTIALS = True  # Cookie va sessionlarni ishlatish uchun
